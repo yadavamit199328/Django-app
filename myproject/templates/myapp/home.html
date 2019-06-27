@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+<html lang = "en" dir="ltr">
+
+   <head>
+       <meta charset="utf-8">
+      <title></title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <!-- <link rel="stylesheet" href="{%static  "css/stylesheet1.css" %}"> -->
+   </head>
+   
+   <body>
+    <div class="container">
+        <div class="jumbotron" align="center">
+                <div class="container">
+   
+                    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+                        <h1>Select Your application name </h1><br>
+                        <select name="resname" multiple>
+                            {% for data in b.name %}
+                                 
+                                <option value="{{data}}">{{data}}</option>
+                                   
+                            {% endfor %}
+                        </select>  
+                        
+                            <button type="save">get code</button><br>
+                            <!-- {{cou}} -->
+                            
+                    </form>
+                    <br><a class="btn btn-primary btn-lg" href="/phoneno" role="button">Phone Number</a><hr>
+                    <!--<br><a class="btn btn-primary btn-lg" href="/percentcrosstab" role="button">Cross Table in percentage</a> -->
+                    
+                </div>
+        </div>
+    </div>
+
+
+
+
+    
+   </body>
+</html>
+
